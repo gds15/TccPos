@@ -17,9 +17,21 @@
 	box-sizing: border-box;
 }
 
+.jumbotron {
+  width: 70%;
+  margin-left: 12em;
+  margin-top: 3em;
+  
+}
+
+#a {
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
 body, html {
 	height: 100%;
-	font-family: Ubuntu-Regular, sans-serif;
+  font-family: Ubuntu-Regular, sans-serif;
+  background: url(../img/back1.jpg);
 }
 
 a {
