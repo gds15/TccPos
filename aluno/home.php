@@ -44,7 +44,34 @@
 		</ul>	
 	</div>
 
-	<div id="dropDownSelect1"></div>
+	<main>
+		
+		<!--aqui e para fazer as paginas clicadas no menu aparecer-->
+	        <?php
+
+				if ( isset ( $_GET["p"] ) ){
+					$p = $_GET["p"];
+	                $parametro = explode("/", $p);
+	                $p = $parametro[0];
+					
+				} else {
+					
+					$p = "home";
+				}
+				
+                $pagina = "paginas/".$p.".php";
+            
+                if ( file_exists( $pagina ) ) {
+                    include $pagina;
+                } else {
+                    include "paginas/404.php";
+                }
+            
+			?>
+            <!--final das paginas-->
+
+	</main>
+
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="../outros/jquery/jquery-3.2.1.min.js"></script>
