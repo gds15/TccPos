@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ptBR">
 <head>
-	<title>Login Aluno</title>
+	<title>Login Professor</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
