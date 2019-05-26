@@ -52,7 +52,7 @@
 			else {
 				//esta tudo ok
 				//gravar dados dentro da sessao
-				$_SESSION["aluno"] = array(
+				$_SESSION["prof"] = array(
 					"id" => $dados->id,
 					"login" => $dados->login,
 					"tipo" => $dados->tipo
