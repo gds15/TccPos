@@ -29,15 +29,17 @@
 		<ul class="nav justify-content-end">
 		
 		<li class="nav-item">
-			<a class="nav-link" href="#">Inicio</a>
+			<a class="nav-link" href="home">Inicio</a>
 		</li>
 		
 		<li class="nav-item">
-			<a class="nav-link" href="#">Turmas</a>
+			<a class="nav-link" href="turmas">Turmas</a>
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="#">Perfil</a>
+			<!--aqui no link do meno n tem q por o .php pq la em baixo ja vai fazer isso
+			-->
+			<a class="nav-link" href="perfil">Perfil</a>
 		</li>
 		
 		
@@ -45,8 +47,48 @@
 	</div>
 
 	<div id="dropDownSelect1"></div>
-	
 
+
+	<main>
+		
+
+			  <!--aqui e para fazer as paginas clicadas no menu aparecer-->
+	            <?php
+				//recuperar o parametro p que vai ser o nome da pagina q esta na pasta paginas
+
+				if ( isset ( $_GET["p"] ) ){
+					$p = $_GET["p"];
+	                $parametro = explode("/", $p);
+	                $p = $parametro[0];
+					//mostrar o conteudo
+						//echo $p;
+				} else {
+					//aqui e para a pagina padrao ser a home pq quando logar vai jogar nela que tem q estar la na pasta paginas tbm
+					//podemos por os avisos
+					$p = "home";
+
+					//echo $p;
+				}
+				//pegando o nome da pagina que esta na variavel $p e concatenando com o .php
+                $pagina = "paginas/".$p.".php";
+            
+                //verificar se a pagina existe
+                if ( file_exists( $pagina ) ) {
+                    include $pagina;
+                } else {
+                	//se n existir vai para a 404 q temos que fazer uma
+                    include "paginas/404.php";
+                }
+            
+			?>
+            <!--final das paginas-->
+
+
+
+
+	</main>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="../outros/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../outros/animsition/js/animsition.min.js"></script>
 	<script src="../outros/bootstrap/js/popper.js"></script>
