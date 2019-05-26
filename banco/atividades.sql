@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 26-Maio-2019 às 19:18
+-- Generation Time: 26-Maio-2019 às 20:34
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(45) NOT NULL,
   `tipo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `login`, `senha`, `tipo`) VALUES
 (1, 'ze', '202cb962ac59075b964b07152d234b70', 2),
-(2, 'ze', '202cb962ac59075b964b07152d234b70', 2);
+(3, 'adm', '202cb962ac59075b964b07152d234b70', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
