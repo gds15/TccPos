@@ -27,8 +27,8 @@
 		else {
 			
 			//buscar o usuario com o login
-			$sql = "select * from usuario
-			where login = ? and tipo = 2
+			$sql = "select * from aluno
+			where login = ? and ativo = 1
 			limit 1";
 			//preparar consulta para ser executado
 			$consulta = $pdo->prepare($sql);
@@ -54,8 +54,8 @@
 				//gravar dados dentro da sessao
 				$_SESSION["aluno"] = array(
 					"id" => $dados->id,
-					"login" => $dados->login,
-					"tipo" => $dados->tipo
+					"login" => $dados->login
+					
 					);
 				//redirecionar
 				header("Location: home.php");
