@@ -8,9 +8,6 @@
   font-family: Ubuntu-Bold;
   src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
 }
-
-
-
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -44,6 +41,24 @@
 .btn{
   margin: 10px -10em 0px 12em;
 
+}
+
+.ati {
+
+}
+
+.ati h1 {
+  color: #311aa7;
+  font-size: 50px;
+  box-shadow: #403866;
+  text-align: center;
+  background: #fff;
+  width: 10em;
+  margin-left: 5em;
+}
+
+.ati ul {
+  background: #311aa7;
 }
 
 #a {

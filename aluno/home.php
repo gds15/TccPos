@@ -29,15 +29,15 @@
 		<ul class="nav justify-content-end">
 		
 		<li class="nav-item">
-			<a class="nav-link" href="#">Inicio</a>
+			<a class="nav-link" href="home">Inicio</a>
 		</li>
 		
 		<li class="nav-item">
-			<a class="nav-link" href="#">Atividades</a>
+			<a class="nav-link" href="atividade">Atividades</a>
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="#">Perfil</a>
+			<a class="nav-link" href="perfil">Perfil</a>
 		</li>
 		
 		
