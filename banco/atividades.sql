@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 27-Maio-2019 às 01:12
+-- Generation Time: 27-Maio-2019 às 23:46
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `senha` varchar(45) NOT NULL,
   `turma_id` int(11) NOT NULL,
   `ativo` int(11) NOT NULL,
+  `foto` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk1_idx` (`turma_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -44,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `nome`, `login`, `senha`, `turma_id`, `ativo`) VALUES
-(2, 'diogo vanderlan', 'ze', '83c40978009dd8a1a89d73028be27a5b', 2, 1);
+INSERT INTO `aluno` (`id`, `nome`, `login`, `senha`, `turma_id`, `ativo`, `foto`) VALUES
+(2, 'diogo vanderlan', 'ze', '83c40978009dd8a1a89d73028be27a5b', 2, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
   `nome` varchar(45) NOT NULL,
   `login` varchar(45) NOT NULL,
   `senha` varchar(45) NOT NULL,
-  `foto` varchar(45) NOT NULL,
+  `foto` varchar(45) DEFAULT NULL,
   `ativo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
