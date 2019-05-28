@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 27-Maio-2019 às 23:46
+-- Generation Time: 28-Maio-2019 às 02:11
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -130,14 +130,18 @@ CREATE TABLE IF NOT EXISTS `turma` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `turma`
 --
 
 INSERT INTO `turma` (`id`, `nome`) VALUES
-(2, 'turma 3');
+(2, 'turma 3'),
+(3, 'turma 1'),
+(4, 'turma 2'),
+(5, 'turma 4'),
+(6, 'turma 5');
 
 --
 -- Constraints for dumped tables
