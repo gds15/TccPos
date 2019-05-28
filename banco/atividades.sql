@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 28-Maio-2019 às 02:11
+-- Generation Time: 28-Maio-2019 às 02:28
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -62,8 +62,12 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   `nota` float DEFAULT NULL,
   `correcao` varchar(200) DEFAULT NULL,
   `aluno_id` int(11) NOT NULL,
+  `professor_id` int(11) NOT NULL,
+  `materia_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk2_idx` (`aluno_id`)
+  KEY `fk2_idx` (`aluno_id`),
+  KEY `fk8_idx` (`professor_id`),
+  KEY `fk9_idx` (`materia_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -77,7 +81,18 @@ CREATE TABLE IF NOT EXISTS `materia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `materia`
+--
+
+INSERT INTO `materia` (`id`, `nome`) VALUES
+(1, 'matematica'),
+(2, 'quimica'),
+(3, 'português'),
+(4, 'história '),
+(5, 'geografia ');
 
 -- --------------------------------------------------------
 
@@ -157,7 +172,9 @@ ALTER TABLE `aluno`
 -- Limitadores para a tabela `atividade`
 --
 ALTER TABLE `atividade`
-  ADD CONSTRAINT `fk2` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk2` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk8` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk9` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `materia_prof`
