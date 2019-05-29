@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 28-Maio-2019 às 02:28
+-- Generation Time: 29-Maio-2019 às 02:02
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -73,6 +73,21 @@ CREATE TABLE IF NOT EXISTS `atividade` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `experiencias`
+--
+
+DROP TABLE IF EXISTS `experiencias`;
+CREATE TABLE IF NOT EXISTS `experiencias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(45) NOT NULL,
+  `professor_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk10_idx` (`professor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `materia`
 --
 
@@ -124,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
   `senha` varchar(45) NOT NULL,
   `foto` varchar(45) DEFAULT NULL,
   `ativo` int(11) NOT NULL,
+  `contato` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -131,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `professor` (
 -- Extraindo dados da tabela `professor`
 --
 
-INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `foto`, `ativo`) VALUES
-(1, 'epaminondas', 'adm', '202cb962ac59075b964b07152d234b70', 'aa', 1);
+INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `foto`, `ativo`, `contato`) VALUES
+(1, 'epaminondas', 'adm', '202cb962ac59075b964b07152d234b70', 'aa', 1, '');
 
 -- --------------------------------------------------------
 
@@ -175,6 +191,12 @@ ALTER TABLE `atividade`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk8` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk9` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `experiencias`
+--
+ALTER TABLE `experiencias`
+  ADD CONSTRAINT `fk10` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `materia_prof`
