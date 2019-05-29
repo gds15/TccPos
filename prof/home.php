@@ -57,9 +57,15 @@
 		</li>
 
 		<li class="nav-item">
-			<!--aqui no link do meno n tem q por o .php pq la em baixo ja vai fazer isso
-			-->
+			<a class="nav-link" href="atividade">atividade</a>
+		</li>
+
+		<li class="nav-item">
 			<a class="nav-link" href="perfil">Perfil</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" href="sair.php">sair</a>
 		</li>
 		
 		
