@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 29-Maio-2019 às 02:02
+-- Generation Time: 29-Maio-2019 às 02:41
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -68,6 +68,26 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   KEY `fk2_idx` (`aluno_id`),
   KEY `fk8_idx` (`professor_id`),
   KEY `fk9_idx` (`materia_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `atividadesafazer`
+--
+
+DROP TABLE IF EXISTS `atividadesafazer`;
+CREATE TABLE IF NOT EXISTS `atividadesafazer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(45) NOT NULL,
+  `dataEntrega` date NOT NULL,
+  `professor_id` int(11) NOT NULL,
+  `materia_id` int(11) NOT NULL,
+  `turma_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk11_idx` (`professor_id`),
+  KEY `fk12_idx` (`materia_id`),
+  KEY `fk13_idx` (`turma_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -148,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
 --
 
 INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `foto`, `ativo`, `contato`) VALUES
-(1, 'epaminondas', 'adm', '202cb962ac59075b964b07152d234b70', 'aa', 1, '');
+(1, 'epaminondas', 'adm', '202cb962ac59075b964b07152d234b70', 'aa', 1, 'epaminondas@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -191,6 +211,14 @@ ALTER TABLE `atividade`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk8` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk9` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `atividadesafazer`
+--
+ALTER TABLE `atividadesafazer`
+  ADD CONSTRAINT `fk11` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk12` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk13` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `experiencias`
