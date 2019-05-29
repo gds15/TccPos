@@ -39,6 +39,10 @@
 		<li class="nav-item">
 			<a class="nav-link" href="perfil">Perfil</a>
 		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" href="sair.php">sair</a>
+		</li>
 		
 		
 		</ul>	
