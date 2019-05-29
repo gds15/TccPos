@@ -4,4 +4,4 @@
 	//apagar os dados da sessao
 	unset( $_SESSION["aluno"] );
 	//direcionar para o index.php
-	header( "Location: index.php" );
+	header( "Location: ../index.php" );
