@@ -1,3 +1,22 @@
+<?php
+	//iniciar a sessao
+	session_start();
+	if ( !isset( $_SESSION["aluno"]["id"] ) ) {
+		//direcionar para o index
+		header( "Location: index.php" );
+	}
+	//incluir o arquivo para conectar no banco
+	include "../configuracoes/conectar.php";
+   
+    //funcao para formatar datas
+      function formatardata($data) {
+        // 29/09/2017 -> 2017-09-29
+        $data = explode( "-", $data );
+        $data = $data[2]."-".$data[1]."-".$data[0];
+        return $data;
+      }
+?>
+
 <!DOCTYPE html>
 <html lang="ptBR">
 <head>
