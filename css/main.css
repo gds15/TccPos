@@ -84,9 +84,6 @@
   margin-right: 20em;
   overflow-y:hidden;
   overflow-x:hidden;
- 
-
-
 }
 
 #e {
@@ -100,6 +97,19 @@
 #btt:hover{
   background: #fff;
   color: #311aa7;
+}
+
+#myTab{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 25px;
+  color: #403866;
+
+}
+
+#tab {
+  background: #403866;
+  margin-top: 15px;
 }
 
 body, html {
