@@ -13,6 +13,31 @@
   box-sizing: border-box;
 }
 
+.tatividades{
+  background: rgba(255, 255, 255, 0.9);
+
+}
+
+.tatividades ul {
+  background: #fff;
+}
+
+.tatividades h2, h4 {
+  text-align: center;
+  color: #403866;
+}
+
+.tatividades .btn {
+  margin-left: 0px;
+
+}
+
+#card{
+ float: left;
+ margin-top: 2em;
+ margin-left: 15px;;
+}
+
 .jumbotron {
   background-color: rgba(255, 255, 255, 0.9);
   width: 50%;
