@@ -41,12 +41,17 @@
 
 	<link rel="stylesheet" type="text/css" href="../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/testeFormulario.css">
 
 </head>
 <body>
 	<div class="menu">
 		<ul class="nav justify-content-end">
 		
+		<li class="nav-item">
+			<a class="nav-link" href="enviarAtividade">Enviar</a>
+		</li>
+
 		<li class="nav-item">
 			<a class="nav-link" href="home">Inicio</a>
 		</li>
@@ -96,10 +101,10 @@
 	</main>
 
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
 	<script src="../outros/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../outros/animsition/js/animsition.min.js"></script>
-	<script src="../outros/bootstrap/js/popper.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="../outros/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../outros/select2/select2.min.js"></script>
 	<script src="../outros/daterangepicker/moment.min.js"></script>
