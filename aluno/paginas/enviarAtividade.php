@@ -11,21 +11,21 @@
 				</span>
 
                 <div class="card-body">
-	                <form name="formcadastro" method="post" action="enviarAtividade" novalidate>
+	                <form name="formcadastro" method="post" action="salvarAtividade" novalidate>
 
 						<fieldset>
 							
 								
 								<label for="ida" class="labelForm">ID da Atividade:</label>
-								<div class="wrap-input100 validate-input m-b-16 col-sm-6">
-									<input class="input100" type="text" name="id" placeholder="ID Atividade">
+								<div class="wrap-input100 validate-input m-b-16 col-sm-5">
+									<input readonly class="input100" type="text" name="id" placeholder="ID Atividade">
 									<span class="focus-input100"></span>
 								</div>
 							
 
-								<label for="ida" class="labelForm">ID do Aluno:</label>
-								<div class="wrap-input100 validate-input m-b-16 col-sm-6">
-									<input class="input100" type="text" name="aluno_id" placeholder="ID Aluno" value="<?php echo $_SESSION["aluno"]["id"];?>">
+								<label for="idaluno" class="labelForm">ID do Aluno:</label>
+								<div class="wrap-input100 validate-input m-b-16 col-sm-5">
+									<input readonly class="input100" type="text" name="aluno_id" placeholder="ID Aluno" value="<?php echo $_SESSION["aluno"]["id"];?>">
 									<span class="focus-input100"></span>
 								</div>
 								
@@ -35,43 +35,10 @@
 									<span class="focus-input100"></span>
 								</div>
 
-								<label for="descricao" class="labelForm">Selecione o Professor:</label>
-								<div class="wrap-input100 validate-input m-b-16">
-										<select name="professor"
-										class="wrap-input100 validate-input m-b-16 input100"
-										required id="responsavel"
-										data-validation="Selecione o Responsavel">
-											<option value="<?=$professor_id;?>"> </option>
-											<?php
-											//selecionar todas as classes
-											$sql = "select * from professor
-												order by nome";
-											//preparar o sql
-											$consulta = $pdo->prepare($sql);
-											//executar o sql
-											$consulta->execute();
-											//laço para pegar registro por registro
-											while ($dados = $consulta->fetch(PDO::FETCH_OBJ)) {
-												//separar os dados
-												$id = $dados->id;
-												$nome = $dados->nome;
-												echo "<option value='$id'>
-												$nome</option>";
-											}
-											?>
-										</select>
-										<script type="text/javascript">
-											$("#professor_id").val('<?=$professor_id;?>');
-										</script>
-									</div>
-								    
-
-
-
 
 									 <label for="descricao" class="labelForm">Selecione a Materia:</label>
 									<div class="wrap-input100 validate-input m-b-16">
-											<select name="professor"
+											<select name="materia_id"
 											class="wrap-input100 validate-input m-b-16 input100"
 											required id="responsavel"
 											data-validation="Selecione o Responsavel">
@@ -100,6 +67,11 @@
 										</div>
 									    </div>
 
+									<label for="foto" class="labelForm">foto:</label>
+									<div class="wrap-input100 validate-input m-b-16 ">
+										<input  class="input100" type="text" name="foto" placeholder="foto" >
+										<span class="focus-input100"></span>
+									</div>
 
 
 
