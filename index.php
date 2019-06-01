@@ -6,6 +6,8 @@
     <meta name="description" content="tcc pos">
     <meta name="author" content="gds15">
 
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+
     <!--CSS Bootstrap-->
     <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
