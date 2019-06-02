@@ -1,4 +1,20 @@
 
+<<<<<<< HEAD
+
+
+<div class="container py-1">
+    <div class="row">
+        <div class="mx-auto col-sm-12">        
+            <div class="card">
+
+                <span class="login100-form-title p-b-51">
+					Envio de Atividade
+				</span>
+
+                <div class="card-body">
+					<div class="formatv">
+	                <form name="formcadastro" method="post" action="salvarAtividade" novalidate>
+=======
  <?php
 	$id = $aluno_id = $materia_id = $foto = $descricao =  "";
 	//aqui vai pegar o parametro que vai vim por get para poder saber se esta editando
@@ -31,6 +47,7 @@
                         <a class="close font-weight-light" data-dismiss="alert" href="#">×</a>todos os Campos são Obrigatorios
                     </div>
 					<form class="validate-form" name="formEnvio" method="post" action="salvarAtividade" novalidate>
+>>>>>>> 092c4fb62dc86f598aecd9c92019dfa839094875
 
 						<fieldset>
 
@@ -91,6 +108,7 @@
 									<input required type="text" name="foto" placeholder="foto" class="form-control input100" id="foto" value="<?=$foto;?>">
 									<span class="focus-input100"></span>
 								</div>
+							</div>
 							</div>
 
 							
