@@ -138,6 +138,21 @@
   margin-top: 15px;
 }
 
+#idAt {
+  float: left;
+  width: 25em;
+}
+
+#idAlu{
+  float: right;
+  
+}
+
+#desc {
+  margin-top: 6em;
+}
+
+
 body, html {
   font-family: Ubuntu-Regular, sans-serif;
   background: url(../img/back1.jpg);
