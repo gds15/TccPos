@@ -1,5 +1,5 @@
 <?php
-	$id = $aluno_id = $materia_id = $foto = $descricao =  "";
+	$id = $aluno_id = $materia_id = $imagem = $descricao =  "";
 	//aqui vai pegar o parametro que vai vim por get para poder saber se esta editando
 	//essa parte aqui muda em relacao ao que usamos na faculdade para pegar o id que vem por get na barra de pesquisa
 	if ( isset ($parametro[1] ) ) {
@@ -16,7 +16,7 @@
 	    //separar os dados
 	    $dados = $consulta->fetch(PDO::FETCH_OBJ);
 	    $id 		= $dados->id;
-		$foto 		= $dados->foto;
+		$imagem 	= $dados->imagem;
 		$descricao  = $dados->descricao;
 		$aluno_id   = $dados->aluno_id;
 		$materia_id = $dados->$materia_id;
@@ -31,7 +31,7 @@
 					<a class="close font-weight-light" data-dismiss="alert" href="#">×</a>todos os Campos são Obrigatorios
 				</div>
 
-				<form class="validate-form" name="formEnvio" method="post" action="salvarAtividade" novalidate>
+				<form class="validate-form" name="formEnvio" method="post" action="salvarAtividade" enctype="multipart/form-data" novalidate>
 
 					<fieldset>
 				
@@ -90,9 +90,9 @@
 						</div>
 						<!--trocar por um botao pra add a foto depois so pra testes-->
 						<div class="form-group col-md-12 mb-3 ">
-							<label for="foto">foto:</label>
+							<label for="imagem">Foto: (Foto JPG com largura mínima de 800px)</label>
 							<div class="controls validate-input wrap-input100"  data-validate = "Informe a foto">
-								<input required type="text" name="foto" placeholder="foto" class="form-control input100" id="foto" value="<?=$foto;?>">
+								<input required type="file" name="imagem" placeholder="foto" class="form-control input100" id="imagem" value="<?=$imagem;?>">
 								<span class="focus-input100"></span>
 							</div>
 						</div>

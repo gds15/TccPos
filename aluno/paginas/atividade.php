@@ -20,6 +20,27 @@
               <div role="tabpanel" class="tab-pane active" id="feitas">
               <h4>Atividades Feitas</h4>
 
+              <?php
+
+                    $sql = "select * from atividade";
+                    $consulta = $pdo->prepare($sql);
+                    $consulta->execute();
+
+                    while ( $dados = $consulta->fetch(PDO::FETCH_OBJ) ) {
+                    
+                      $imagem = $dados->imagem;
+                     
+
+                      $imagem = $imagem . "p.jpg";
+                      $img = "<img src='../../img/$imagem'";
+                      
+                    }
+
+                    ?>
+
+                    <?php echo" <img src='../../img/$imagem' id='fto'>";                               
+                                              ?>
+
 
                 <div class="card" style="width: 18rem;" id="card">
                   <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
