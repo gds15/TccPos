@@ -17,7 +17,7 @@
 					".", 
 					"" 
 				);
-
+				//1111111111
 				//verificar se é um arquivo JPG
 					if ( $tipo != "image/jpeg" ) {
 						echo "<script>alert('Você pode enviar somente arquivos JPG. Formato enviado $tipo.');history.back();</script>";
