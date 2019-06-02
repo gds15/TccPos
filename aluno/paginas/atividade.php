@@ -13,7 +13,7 @@
 
               <li class="nav-item">
                 <a href="#fazer" class="nav-link" role="tab" data-toggle="tab">Atividades a Fazer</a>
-              </li>         
+              </li>       
             </ul>
 
             <div class="tab-content">
@@ -59,7 +59,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Dissertação sobre a DC Comics</h5>
                     <p class="card-text">Dissertação sobre a DC Comics</p>
-                    <a href="#" class="btn btn-primary">Fazer Atividade</a>
+                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
                   </div>
                 </div>
 
@@ -68,7 +68,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Texto Sobre Power Ranges</h5>
                     <p class="card-text">O inicio de tudo</p>
-                    <a href="#" class="btn btn-primary">Fazer Atividade</a>
+                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
                   </div>
                 </div>
 
@@ -77,7 +77,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Como jogar CSGO sem estresse</h5>
                     <p class="card-text">Tarefa impossivel de ser feita</p>
-                    <a href="#" class="btn btn-primary">Fazer Atividade</a>
+                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
                   </div>
                 </div>
 
@@ -86,7 +86,7 @@
               
 
               
-                </div>
+              </div>
             </div>
           </div>
       </div>

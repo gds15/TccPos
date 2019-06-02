@@ -11,6 +11,7 @@
 				</span>
 
                 <div class="card-body">
+					<div class="formatv">
 	                <form name="formcadastro" method="post" action="salvarAtividade" novalidate>
 
 						<fieldset>
@@ -86,6 +87,7 @@
 										Enviar!
 									</span>
 								</button>
+							</div>
 							</div>
 
 						</fieldset>
