@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 29-Maio-2019 às 02:41
+-- Generation Time: 02-Jun-2019 às 02:49
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -62,13 +62,22 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   `nota` float DEFAULT NULL,
   `correcao` varchar(200) DEFAULT NULL,
   `aluno_id` int(11) NOT NULL,
-  `professor_id` int(11) NOT NULL,
   `materia_id` int(11) NOT NULL,
+  `ativo` varchar(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk2_idx` (`aluno_id`),
-  KEY `fk8_idx` (`professor_id`),
   KEY `fk9_idx` (`materia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `atividade`
+--
+
+INSERT INTO `atividade` (`id`, `foto`, `descricao`, `nota`, `correcao`, `aluno_id`, `materia_id`, `ativo`) VALUES
+(1, 'dssds', 'dffgf', NULL, NULL, 2, 4, 's'),
+(2, 'dfdfd', 'dgdgdgdg', NULL, NULL, 2, 5, 's'),
+(3, 'dfdfd', 'jgjgknjf', NULL, NULL, 2, 5, 's'),
+(4, 'tabuada.jpg', 'tabuada', NULL, NULL, 2, 1, 's');
 
 -- --------------------------------------------------------
 
@@ -115,6 +124,7 @@ DROP TABLE IF EXISTS `materia`;
 CREATE TABLE IF NOT EXISTS `materia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
+  `ativo` varchar(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
@@ -122,12 +132,12 @@ CREATE TABLE IF NOT EXISTS `materia` (
 -- Extraindo dados da tabela `materia`
 --
 
-INSERT INTO `materia` (`id`, `nome`) VALUES
-(1, 'matematica'),
-(2, 'quimica'),
-(3, 'português'),
-(4, 'história '),
-(5, 'geografia ');
+INSERT INTO `materia` (`id`, `nome`, `ativo`) VALUES
+(1, 'matematica', 's'),
+(2, 'quimica', 's'),
+(3, 'português', 's'),
+(4, 'história ', 's'),
+(5, 'geografia ', 's');
 
 -- --------------------------------------------------------
 
@@ -209,7 +219,6 @@ ALTER TABLE `aluno`
 --
 ALTER TABLE `atividade`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk8` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk9` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
