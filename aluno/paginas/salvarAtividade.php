@@ -10,7 +10,7 @@
 					// bytes em kbytes
 				$tamanho = $tamanho / 1024;
 
-					//formatar o tamanho
+					//formatar o tamanho 11111111
 				$tamanho = number_format( 
 					$tamanho, 
 					3, 
