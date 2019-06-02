@@ -95,7 +95,7 @@
 
 							
 							
-							<input class="btn-primary btn-block btn btn-lg" value="Enviar" type="submit">
+							<input class="btn-primary  btn btn-lg enviar" value="Enviar" type="submit">
 						</fieldset>
 					</form>
                 </div>
