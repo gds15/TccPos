@@ -13,6 +13,8 @@
   box-sizing: border-box;
 }
 
+
+
 .tatividades{
   background: rgba(255, 255, 255, 0.9);
 
@@ -36,6 +38,10 @@
  float: left;
  margin-top: 2em;
  margin-left: 15px;;
+}
+
+.top {
+  margin-top: 20px;
 }
 
 .jumbotron {

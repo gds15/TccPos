@@ -47,7 +47,7 @@
 			}
 			//verificar se executou corretamente
 			if ( $consulta->execute() ) {
-				echo "<script>alert('Registro Salvo');location.href='listaConta';</script>";
+				echo "<script>alert('Registro Salvo');location.href='atividade';</script>";
 			} else {
 				//exit();
 				echo "<script>alert('Erro ao Salvar');history.back();</script>";
