@@ -19,7 +19,7 @@
 		$imagem 	= $dados->imagem;
 		$descricao  = $dados->descricao;
 		$aluno_id   = $dados->aluno_id;
-		$materia_id = $dados->$materia_id;
+		$materia_id = $dados->materia_id;
 	}
 ?>
     
