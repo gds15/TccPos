@@ -20,54 +20,44 @@
               <div role="tabpanel" class="tab-pane active" id="feitas">
               <h4>Atividades Feitas</h4>
 
-              <?php
 
-                    $sql = "select * from atividade";
-                    $consulta = $pdo->prepare($sql);
-                    $consulta->execute();
+                  <?php
+                  
+                                  //so vai listar as atividades do logado
+                                  $sql = "SELECT a.*, m.nome FROM atividade a inner join materia m on a.materia_id = m.id WHERE aluno_id = ? ORDER BY id DESC";
+                                  $consulta = $pdo->prepare($sql);
+                                  $consulta->bindParam(1, $_SESSION["aluno"]["id"]);
+                                  $consulta->execute();
 
-                    while ( $dados = $consulta->fetch(PDO::FETCH_OBJ) ) {
-                    
-                      $imagem = $dados->imagem;
-                     
+                                  while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
+                                    $id = $dados->id;
+                                    $imagem = $dados->imagem;
+                                    $descricao = $dados->descricao;
+                                    $nota = $dados->nota;
+                                    $correcao = $dados->correcao;
+                                    $aluno_id = $dados->aluno_id;
+                                    $nome = $dados->nome;
+                                    $ativo = $dados->ativo;
 
-                      $imagem = $imagem . "p.jpg";
-                      $img = "<img src='../../img/$imagem'";
-                      
-                    }
-
+                                    $imagem = $imagem . "p.jpg";
+                                    $img = "../../fotos/$imagem";
                     ?>
 
-                    <?php echo" <img src='../../img/$imagem' id='fto'>";                               
-                                              ?>
+                    <div class="card" style="width: 18rem;" id="card">
+                      <img class="card-img-top" src="<?=$img;?>" alt="Imagem de capa do card">
+                      <div class="card-body">
+                        <h5 class="card-title"><?=$nome;?></h5>
+                        <p class="card-text"><?=$descricao;?></p>
+                        <a href="enviarAtividade/<?=$id;?>" class="btn btn-primary">Ver Atividade</a>
+                      </div>
+                    </div>
+
+                    <?php
+                      }
+                    ?>
 
 
-                <div class="card" style="width: 18rem;" id="card">
-                  <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Tabuada</h5>
-                    <p class="card-text">TABUADA De 0 A 10</p>
-                    <a href="#" class="btn btn-primary">Ver Atividade</a>
-                  </div>
-                </div>
-
-                <div class="card" style="width: 18rem;" id="card">
-                  <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Marvel</h5>
-                    <p class="card-text">Texto sobre o universo Marvel</p>
-                    <a href="#" class="btn btn-primary">Ver Atividade</a>
-                  </div>
-                </div>
-
-                <div class="card" style="width: 18rem;" id="card">
-                  <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Brasil</h5>
-                    <p class="card-text">Historia de quem descobriu o Brasil</p>
-                    <a href="#" class="btn btn-primary">Ver Atividade</a>
-                  </div>
-                </div>           
+                       
               
               </div>
 
