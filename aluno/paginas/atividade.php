@@ -44,7 +44,8 @@
                     ?>
 
                     <div class="card" style="width: 18rem;" id="card">
-                      <img class="card-img-top" src="<?=$img;?>" alt="Imagem de capa do card">
+                      <?php echo" <img src='../fotos/$imagem'>"?>
+                      
                       <div class="card-body">
                         <h5 class="card-title"><?=$nome;?></h5>
                         <p class="card-text"><?=$descricao;?></p>
