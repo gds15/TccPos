@@ -21,6 +21,7 @@
 				//verificar se é um arquivo JPG
 					if ( $tipo != "image/jpeg" ) {
 						echo "<script>alert('Você pode enviar somente arquivos JPG. Formato enviado $tipo.');history.back();</script>";
+						exit();
 					} else if ( $tamanho > 1024 ) {
 
 						echo "<script>alert('Envie imagens de até 1 MB. Tamanho da imagem atual $tamanho Kb');history.back();</script>";

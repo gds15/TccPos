@@ -40,7 +40,7 @@
                                     $ativo = $dados->ativo;
 
                                     $imagem = $imagem . "p.jpg";
-                                    $img = "../../fotos/$imagem";
+                                    $img = "../fotos/$imagem";
                     ?>
 
                     <div class="card" style="width: 18rem;" id="card">
