@@ -17,7 +17,9 @@
 
 .tatividades{
   background: rgba(255, 255, 255, 0.9);
-
+  width: 50%;
+  margin-top: 25px;
+  margin-left: 25%;
 }
 
 
@@ -150,6 +152,21 @@
 
 #desc {
   margin-top: 6em;
+}
+
+.verAti {
+ margin-left: 30%;
+ padding: 25px;
+}
+
+.verAti img {
+  border-radius: 25px;
+}
+
+.verAti p {
+  font-size: 30px;
+  color: #000;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 

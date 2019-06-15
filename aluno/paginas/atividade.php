@@ -49,7 +49,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?=$nome;?></h5>
                         <p class="card-text"><?=$descricao;?></p>
-                        <a href="enviarAtividade/<?=$id;?>" class="btn btn-primary">Ver Atividade</a>
+                        <a href="verAtividade" class="btn btn-primary">Ver Atividade</a>
                       </div>
                     </div>
 
