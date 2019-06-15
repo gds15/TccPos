@@ -57,7 +57,7 @@
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="atividade">atividade</a>
+			<a class="nav-link" href="atividadesAfazer">atividade</a>
 		</li>
 
 		<li class="nav-item">
@@ -124,6 +124,7 @@
 	<script src="../outros/daterangepicker/daterangepicker.js"></script>
 	<script src="../outros/countdowntime/countdowntime.js"></script>
 	<script src="../js/main.js"></script>
+	<script src="../js/inputmask.js"></script>
 
 </body>
 </html>
