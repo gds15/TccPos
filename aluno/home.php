@@ -23,6 +23,8 @@
 	<title>Home Aluno</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- para funcionar a parte da edicao etc-->
+    <base href="http://localhost/TccPos/aluno/home">
 	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4.3.1/css/bootstrap.min.css">

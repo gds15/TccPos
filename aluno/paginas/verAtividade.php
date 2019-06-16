@@ -1,12 +1,18 @@
 <div class="tatividades">
 <div class="container">
 
+
 <?php
+
+    if (isset ($parametro[1])) {
+                
+        $aa = trim( $parametro[1] );
+    
                   
                   //so vai listar as atividades do logado
-                  $sql = "SELECT a.*, m.nome FROM atividade a inner join materia m on a.materia_id = m.id WHERE aluno_id = ? ORDER BY id DESC";
+                  $sql = "SELECT a.*, m.nome FROM atividade a inner join materia m on a.materia_id = m.id WHERE a.id = ?";
                   $consulta = $pdo->prepare($sql);
-                  $consulta->bindParam(1, $_SESSION["aluno"]["id"]);
+                  $consulta->bindParam(1, $aa);
                   $consulta->execute();
 
                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
@@ -47,5 +53,7 @@
 
     <?php 
         }
+
+    }
     
     ?>
