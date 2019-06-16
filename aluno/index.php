@@ -10,6 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/magnific-popup.css">
 
 	<link rel="stylesheet" type="text/css" href="../outros/animate/animate.css">
 
@@ -62,7 +63,8 @@
 
 	<div id="dropDownSelect1"></div>
 	
-
+	<script src="../jquery/jquery.min.js"></script>
+	<script src="../jquery/script.js"></script>
 	<script src="../outros/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../outros/animsition/js/animsition.min.js"></script>
 	<script src="../outros/bootstrap/js/popper.js"></script>

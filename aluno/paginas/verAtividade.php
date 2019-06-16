@@ -24,7 +24,7 @@
                   
     ?>          
                 <div class="verAti">
-                    <?php echo" <img src='../fotos/$imagem'>"?>
+                    <?php echo" <a class='image-link' href='../fotos/$imagem'><img src='../fotos/$imagem'></a>"?>
 
                     <p><strong>Descrição:</strong> <?=$descricao;?></p>
 
