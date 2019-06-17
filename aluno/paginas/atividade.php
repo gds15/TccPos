@@ -30,14 +30,14 @@
                                   $consulta->execute();
 
                                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
-                                    $id = $dados->id;
-                                    $imagem = $dados->imagem;
+                                    $id        = $dados->id;
+                                    $imagem    = $dados->imagem;
                                     $descricao = $dados->descricao;
-                                    $nota = $dados->nota;
-                                    $correcao = $dados->correcao;
-                                    $aluno_id = $dados->aluno_id;
-                                    $nome = $dados->nome;
-                                    $ativo = $dados->ativo;
+                                    $nota      = $dados->nota;
+                                    $correcao  = $dados->correcao;
+                                    $aluno_id  = $dados->aluno_id;
+                                    $nome      = $dados->nome;
+                                    $ativo     = $dados->ativo;
 
                                     $imagem = $imagem . "p.jpg";
                                     $img = "../fotos/$imagem";
@@ -66,45 +66,40 @@
               <div role="tabpanel" class="tab-pane" id="fazer">
               <h4>Atividades a Fazer</h4>
 
+              <?php
+                  
+                  //so vai listar as atividades com feita = n
+                  $sql = "SELECT *, date_format(dataEntrega, '%d-%m-%Y') dataEntrega From atividadesafazer where ativo = 's' AND feita = 'n' ";
+                  $consulta = $pdo->prepare($sql);
+                  $consulta->execute();
+
+                  while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
+                    $id           = $dados->id;
+                    $descricao    = $dados->descricao;
+                    $dataEntrega  = $dados->dataEntrega;
+                    $professor_id = $dados->professor_id;
+                    $materia_id   = $dados->materia_id;
+                    $turma_id     = $dados->turma_id;              
+              ?>
+
               <div class="card" style="width: 18rem;" id="card">
                   <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                   <div class="card-body">
-                    <h5 class="card-title">Dissertação sobre a DC Comics</h5>
-                    <p class="card-text">Dissertação sobre a DC Comics</p>
-                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
+                    <h5 class="card-title"><?=$descricao;?></h5>
+                    <p class="card-text">Data para Entrega: <?=$dataEntrega;?></p>
+                    <a href="enviarAtividade/<?=$id;?>" class="btn btn-primary">Fazer Atividade</a>
                   </div>
                 </div>
 
-                <div class="card" style="width: 18rem;" id="card">
-                  <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Texto Sobre Power Ranges</h5>
-                    <p class="card-text">O inicio de tudo</p>
-                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
-                  </div>
-                </div>
-
-                <div class="card" style="width: 18rem;" id="card">
-                  <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Como jogar CSGO sem estresse</h5>
-                    <p class="card-text">Tarefa impossivel de ser feita</p>
-                    <a href="enviarAtividade" class="btn btn-primary">Fazer Atividade</a>
-                  </div>
-                </div>
+              <?php
+                }
+              ?>
 
               </div>
-
-              
-
-              
               </div>
             </div>
           </div>
       </div>
 </div>
 
-    <!-- jQuery first, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-  </body>
+   

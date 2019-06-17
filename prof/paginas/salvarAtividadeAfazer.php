@@ -30,8 +30,8 @@
 			//verificar se o id esta vazio - insert
 			if ( empty ( $id ) ) {
 				//gravar no banco de dados
-				$sql = "insert into atividadesafazer (id, professor_id, descricao, turma_id, materia_id, dataEntrega, ativo)
-				values (NULL, ? , ?, ?, ?, ?, 's')";
+				$sql = "insert into atividadesafazer (id, professor_id, descricao, turma_id, materia_id, dataEntrega, ativo, feita)
+				values (NULL, ? , ?, ?, ?, ?, 's', 'n')";
 				$consulta = $pdo->prepare($sql);
 				//passar o parametro
 				$consulta->bindParam(1, $professor_id);
@@ -43,7 +43,7 @@
 			} else {
 				//dar update
 				$sql = "update atividadesafazer 
-					set professor_id = ?, descricao = ?, turma_id = ?, materia_id = ?, dataEntrega =?,  ativo = 's' where id = ? limit 1";
+					set professor_id = ?, descricao = ?, turma_id = ?, materia_id = ?, dataEntrega =?,  ativo = 's', feita = 'n' where id = ? limit 1";
 				$consulta = $pdo->prepare( $sql );
 				$consulta->bindParam(1, $professor_id);
 				$consulta->bindParam(2, $descricao);
