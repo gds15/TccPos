@@ -54,7 +54,8 @@
 				//gravar dados dentro da sessao
 				$_SESSION["aluno"] = array(
 					"id" => $dados->id,
-					"login" => $dados->login
+					"login" => $dados->login,
+					"turma_id" =>$dados->turma_id
 					
 					);
 				//redirecionar

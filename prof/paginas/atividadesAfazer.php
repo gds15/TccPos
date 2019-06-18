@@ -99,7 +99,7 @@
 						</div>
 
                         <div class="form-group col-md-12">
-							<label for="materia_id">Selecione a Turma:</label>
+							<label for="turma_id">Selecione a Turma:</label>
 							<div class="controls validate-input wrap-input100"  data-validate = "Selecione a turma">
 								<select name="turma_id" class="form-control input100" required id="turma_id">
 									<option value="">

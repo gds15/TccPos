@@ -69,8 +69,9 @@
               <?php
                   
                   //so vai listar as atividades com feita = n
-                  $sql = "SELECT *, date_format(dataEntrega, '%d-%m-%Y') dataEntrega From atividadesafazer where ativo = 's' AND feita = 'n' ";
+                  $sql = "SELECT *, date_format(dataEntrega, '%d-%m-%Y') dataEntrega From atividadesafazer where ativo = 's' AND turma_id = ?";
                   $consulta = $pdo->prepare($sql);
+                   $consulta->bindParam(1, $_SESSION["aluno"]["turma_id"]);
                   $consulta->execute();
 
                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
