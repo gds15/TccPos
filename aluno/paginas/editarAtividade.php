@@ -18,7 +18,7 @@
 		$descricao    = $dados->descricao;
         $aluno_id     = $dados->aluno_id;
         $materia_id   = $dados->materia_id;
-        $professor_id + $dados->professor_id;
+        $professor_id = $dados->professor_id;
 		 
 	}
 ?>
@@ -57,7 +57,7 @@
 						<div class="form-group col-md-12" id="desc">
 							<label for="descricao">Descrição:</label>
 							<div class="controls wrap-input100 validate-input" data-validate = "Informe a descricao">
-								<textarea rows="8" class="form-control input-lg input100" placeholder="Descrição da Atividade" name="descricao" value="<?=$descricao;?>" type="text"></textarea>
+								<input rows="8" class="form-control input-lg input100" placeholder="Descrição da Atividade" name="descricao" value="<?=$descricao;?>" type="text">
 								<span class="focus-input100"></span>
 							</div>
 						</div>
