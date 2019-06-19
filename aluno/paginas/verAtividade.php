@@ -40,7 +40,17 @@
 
                     <p><strong>Correção:</strong> <?=$correcao;?></p>
 
-                    
+                    <?php
+                    //aqui vou ver se a nota esta vazia para poder mandar para o editar atividade
+                    //se a nota n for empty vai por um botao vermelho q n manda pra lugar nenhum pq o professor ja vai ter dado a nota e corrigido a atividade
+                    //agora se a nota for empty ele vai poder editar ai vai mostrar o botao azul normal com o link para o editar atividade.php que e o msm form do outro so q pra edicao
+                    //forma simples de resolver aquele problema de ontem
+                        if( !empty ($nota)) {
+                            echo " <a type='button' href='#' class='btn btn-danger'>Editar</a>";
+                        } else {
+                            echo "<a type='button' href='editarAtividade/$id' class='btn btn-primary'>Editar</a>";
+                        }
+                    ?>
 
                 </div>
 
