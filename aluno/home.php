@@ -63,7 +63,7 @@
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="perfil">Perfil</a>
+			<a class="nav-link" href="perfilAluno">Perfil</a>
 		</li>
 
 		<li class="nav-item">
