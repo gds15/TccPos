@@ -16,16 +16,16 @@
                 </div>
                 <?php 
                     
-                    $x = $_SESSION["aluno"]["id"];
-                    $sql = "SELECT a.*, t.nome as 'nomeTurma' FROM aluno a JOIN turma t ON t.id = a.turma_id WHERE a.id = $x";
+                    $pro = $_SESSION["prof"]["id"];
+                    $sql = "SELECT * FROM professor WHERE id = $pro";
                     $consulta = $pdo->prepare($sql);
                     $consulta->execute();
 
                     while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
                     $id        = $dados->id;
-                    $nome      = $dados->nome;
+                    $nomep     = $dados->nomep;
                     $login     = $dados->login;
-                    $turma_id  = $dados->nomeTurma;
+                    $contato   = $dados->contato;
 
                    // $imagem = $imagem . "p.jpg";
                    // $img = "../fotos/$imagem";
@@ -42,7 +42,7 @@
 						<li>
 							<a href="#">
 							<i class="glyphicon glyphicon-home"></i>
-							Nome: <?=$nome;?> </a>
+							Nome: <?=$nomep;?> </a>
 						</li>
 						<li>
 							<a href="#">
@@ -52,15 +52,8 @@
 						<li>
 							<a href="#" target="_blank">
 							<i class="glyphicon glyphicon-ok"></i>
-                            Turma: <?=$turma_id;?> </a>
+                            Contato: <?=$contato;?> </a>
 						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-                            Contatos
-                        </a>
-                        
-                        </li>
                      
                     </ul>
                     <?php } ?>
