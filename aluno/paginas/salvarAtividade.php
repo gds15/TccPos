@@ -74,8 +74,8 @@
 			}
 			
 				//gravar no banco de dados
-				$sql = "insert into atividade (id, imagem, descricao, aluno_id, materia_id, professor_id, ativo)
-				values (NULL, ? , ?, ?, ?, ?, 's')";
+				$sql = "insert into atividade (id, imagem, descricao, aluno_id, materia_id, professor_id, ativo, turma_id)
+				values (NULL, ? , ?, ?, ?, ?, 's', ?)";
 				$consulta = $pdo->prepare($sql);
 				//passar o parametro
 				$consulta->bindParam(1, $imagem);
@@ -83,6 +83,7 @@
 				$consulta->bindParam(3, $aluno_id);
 				$consulta->bindParam(4, $materia_id);
 				$consulta->bindParam(5, $professor_id);
+				$consulta->bindParam(6, $_SESSION["aluno"]["turma_id"]);
 			//verificar se executou corretamente
 			if ( $consulta->execute() ) {
 				echo "<script>alert('Registro Salvo');location.href='atividade';</script>";
