@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 17-Jun-2019 às 02:41
+-- Generation Time: 23-Jun-2019 às 23:38
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.3.1
 
@@ -69,7 +69,15 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   KEY `fk9_idx` (`aluno_id`),
   KEY `fk10_idx` (`materia_id`),
   KEY `fk11_idx` (`professor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `atividade`
+--
+
+INSERT INTO `atividade` (`id`, `imagem`, `descricao`, `nota`, `correcao`, `aluno_id`, `materia_id`, `professor_id`, `ativo`) VALUES
+(1, '1560824442', 'sasesrfgghuij', '6', 'ta mais ou meno', 2, 4, 1, 's'),
+(2, '1560825135', 'teste 500', NULL, NULL, 2, 4, 1, 's');
 
 -- --------------------------------------------------------
 
@@ -86,19 +94,22 @@ CREATE TABLE IF NOT EXISTS `atividadesafazer` (
   `materia_id` int(11) NOT NULL,
   `turma_id` int(11) NOT NULL,
   `ativo` varchar(1) NOT NULL,
-  `feita` varchar(1) NOT NULL,
+  `feita` enum('s','n') NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk11_idx` (`professor_id`),
   KEY `fk12_idx` (`materia_id`),
   KEY `fk13_idx` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `atividadesafazer`
 --
 
 INSERT INTO `atividadesafazer` (`id`, `descricao`, `dataEntrega`, `professor_id`, `materia_id`, `turma_id`, `ativo`, `feita`) VALUES
-(1, 'teste', '2019-06-15', 1, 5, 5, 's', 'n');
+(1, 'teste', '2019-06-15', 1, 5, 5, 's', 'n'),
+(2, 'Teste n°99999', '2019-06-17', 1, 4, 2, 's', 'n'),
+(9, 'dsdsadadasdas', '2019-06-18', 1, 4, 3, 's', 'n'),
+(11, 'wfrerere', '2019-06-18', 1, 2, 4, 's', 'n');
 
 -- --------------------------------------------------------
 
@@ -165,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `materia_prof` (
 DROP TABLE IF EXISTS `professor`;
 CREATE TABLE IF NOT EXISTS `professor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
+  `nomep` varchar(45) NOT NULL,
   `login` varchar(45) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `foto` varchar(45) DEFAULT NULL,
@@ -178,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
 -- Extraindo dados da tabela `professor`
 --
 
-INSERT INTO `professor` (`id`, `nome`, `login`, `senha`, `foto`, `ativo`, `contato`) VALUES
+INSERT INTO `professor` (`id`, `nomep`, `login`, `senha`, `foto`, `ativo`, `contato`) VALUES
 (1, 'epaminondas', 'adm', '202cb962ac59075b964b07152d234b70', 'aa', 1, 'epaminondas@gmail.com');
 
 -- --------------------------------------------------------
@@ -205,6 +216,22 @@ INSERT INTO `turma` (`id`, `nome`, `ativo`) VALUES
 (4, 'turma 2', 's'),
 (5, 'turma 4', 's'),
 (6, 'turma 5', 's');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `turma_prof`
+--
+
+DROP TABLE IF EXISTS `turma_prof`;
+CREATE TABLE IF NOT EXISTS `turma_prof` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `professor_id` int(11) NOT NULL,
+  `turma_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk 400_idx` (`professor_id`),
+  KEY `fk 500_idx` (`turma_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Constraints for dumped tables
@@ -244,6 +271,13 @@ ALTER TABLE `experiencias`
 ALTER TABLE `materia_prof`
   ADD CONSTRAINT `fk3` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk4` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `turma_prof`
+--
+ALTER TABLE `turma_prof`
+  ADD CONSTRAINT `fk 400` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk 500` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
