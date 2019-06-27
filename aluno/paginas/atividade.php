@@ -69,25 +69,34 @@
               <?php
                   
                   //so vai listar as atividades com feita = n
-                  $sql = "SELECT *, date_format(dataEntrega, '%d-%m-%Y') dataEntrega From atividadesafazer where ativo = 's' AND turma_id = ?";
+                  $sql = "select a.*, a.dataEntrega, m.nome, p.nomep from atividadesafazer a inner join professor p on (a.professor_id = p.id) inner join materia m on (a.materia_id = m.id) where a.turma_id = ? AND a.ativo = 's'"; 
+                  
+            
                   $consulta = $pdo->prepare($sql);
-                   $consulta->bindParam(1, $_SESSION["aluno"]["turma_id"]);
+                  $consulta->bindParam(1, $_SESSION["aluno"]["turma_id"]);
                   $consulta->execute();
 
                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
                     $id           = $dados->id;
                     $descricao    = $dados->descricao;
                     $dataEntrega  = $dados->dataEntrega;
-                    $professor_id = $dados->professor_id;
+                    $nomep        = $dados->nomep;
                     $materia_id   = $dados->materia_id;
-                    $turma_id     = $dados->turma_id;              
+                    $turma_id     = $dados->turma_id; 
+                    
+         
+                    
+                
               ?>
 
               <div class="card" style="width: 18rem;" id="card">
                   <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                   <div class="card-body">
                     <h5 class="card-title"><?=$descricao;?></h5>
-                    <p class="card-text">Data para Entrega: <?=$dataEntrega;?></p>
+                    <p class="card-text">Data para Entrega: <?php echo date('d/m/Y', strtotime($dataEntrega)); ?></p>
+                    <p class="card-text">Professor: <?=$nomep;?></p>
+                    <p class="card-text">Materia: <?=$nome;?></p>
+                  
                     <a href="enviarAtividade/<?=$id;?>" class="btn btn-primary">Fazer Atividade</a>
                   </div>
                 </div>

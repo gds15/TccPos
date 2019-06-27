@@ -7,9 +7,9 @@
             <?php
                   $pro = $_SESSION["prof"]["id"];
                   //so vai listar as atividades do logado
-                  $sql = "SELECT tu.*, t.nome FROM turma_prof tu JOIN turma t on (t.id = tu.turma_id) WHERE professor_id = $pro";
+                  $sql = "SELECT tu.*, t.nome FROM turma_prof tu JOIN turma t on (t.id = tu.turma_id) WHERE professor_id = $pro GROUP BY t.nome";
                   $consulta = $pdo->prepare($sql);
-                  $consulta->bindParam(1, $_SESSION["aluno"]["id"]);
+
                   $consulta->execute();
 
                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
