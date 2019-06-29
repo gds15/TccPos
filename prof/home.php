@@ -135,7 +135,8 @@
 	<script src="../js/main.js"></script>
 	<script src="../js/inputmask.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/af-2.3.3/b-1.5.6/datatables.min.js"></script>
-
+	
+	
 
 </body>
 </html>
