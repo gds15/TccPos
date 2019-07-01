@@ -1,7 +1,8 @@
 <?php
 	
 	if ( isset ($parametro[1] ) ) {
-	    //recuperar o id
+		//recuperar o id
+		
 		$seila = trim( $parametro[1] );
 
 		//$teste = "'". $seila . "'";
@@ -22,6 +23,8 @@
 			$nome        = $dados->nome;
 			$nomet		 = $dados->nomet;
 
+			$ids = $id . $materia_id;
+
 
 ?>
 	
@@ -34,6 +37,7 @@
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
 	  <th scope="col">Turma</th>
+	  <th scope="col">Atividade</th>
 
 
       
@@ -44,6 +48,7 @@
       <td><?=$id;?></td>
       <td><?=$nome;?></td>
 	  <td><?=$nomet;?></td>
+	  <td><a href='atividade/<?=$ids;?>' class='btn btn-primary'>Ver Atividade</a></td>
      
     </tr>
   </tbody>
