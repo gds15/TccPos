@@ -16,7 +16,8 @@
             <?php
                   $pro = $_SESSION["prof"]["id"];
                   //listar as matérias do professor para aquela turma
-                  $sql = "SELECT tu.*, m.nome FROM turma_prof tu JOIN materia m on (m.id = tu.materia_id) WHERE turma_id = $turma_id AND professor_id = $pro";
+                  //SELECT ati.*, t.nome FROM atividadesafazer ati JOIN turma t ON (t.id = ati.turma_id) WHERE professor_id = $pro GROUP BY t.nome
+                  $sql = "SELECT ati.*, m.nome FROM atividadesafazer ati JOIN materia m on (m.id = ati.materia_id) WHERE turma_id = $turma_id AND professor_id = $pro";
                   $consulta = $pdo->prepare($sql);
                   $consulta->execute();
 

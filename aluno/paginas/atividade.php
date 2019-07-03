@@ -79,6 +79,7 @@
                   while ( $dados = $consulta->fetch(PDO::FETCH_OBJ)) {
                     $id           = $dados->id;
                     $descricao    = $dados->descricao;
+                    $nome         = $dados->nome;
                     $dataEntrega  = $dados->dataEntrega;
                     $nomep        = $dados->nomep;
                     $materia_id   = $dados->materia_id;
