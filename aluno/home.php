@@ -50,9 +50,7 @@
 	<div class="menu">
 		<ul class="nav justify-content-end">
 		
-		<li class="nav-item">
-			<a class="nav-link" href="enviarAtividade">Enviar</a>
-		</li>
+		
 
 		<li class="nav-item">
 			<a class="nav-link" href="home">Inicio</a>

@@ -21,7 +21,7 @@
                 $consulta->bindParam(7, $id);
 			//verificar se executou corretamente
 			if ( $consulta->execute() ) {
-				echo "<script>alert('Registro Editado');location.href='atividade';</script>";
+				echo "<script>alert('Registro Editado');location.href='home';</script>";
 			} else {
 				//exit();
 				echo "<script>alert('Erro ao Editar');history.back();</script>";
